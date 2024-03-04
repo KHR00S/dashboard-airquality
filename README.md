@@ -49,6 +49,8 @@
 
 The `dashboard.py` script in the `Dashboard` folder contains the application to interactively explore the analyzed data. Run the script and navigate to the provided URL to access the dashboard.
 
+or you can open this link https://dashboard-air-quality-khr00s.streamlit.app/
+
 Feel free to reach out if you have any questions or suggestions!
 
 ---
