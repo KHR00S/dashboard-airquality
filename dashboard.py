@@ -74,19 +74,20 @@ def airpolution_display(df):
 # Define air_polution_graph function
 def air_polution_graph(df):
     df = df.sort_values(by='year')  # Ensure DataFrame is sorted by 'year'
-    
+
     with st.expander("PM2.5"):
         fig, ax = plt.subplots(figsize=(16, 8))
-        ax.plot(df['year'], df['PM2.5'], marker='o', linewidth=2, color="#39064B")
+        ax.plot(df['year'].to_numpy(), df['PM2.5'].to_numpy(), marker='o', linewidth=2, color="#39064B")
         ax.tick_params(axis='y', labelsize=20)
         ax.tick_params(axis='x', labelsize=20, labelrotation=45)
         ax.set_ylabel("PM2.5", fontsize=25)
         ax.set_title("PM2.5", loc="center", fontsize=35)
         st.pyplot(fig)
 
+
     with st.expander("PM10"):
         fig, ax = plt.subplots(figsize=(16, 8))
-        ax.plot(df['year'], df['PM10'], marker='o', linewidth=2, color="#39064B")
+        ax.plot(df['year'].to_numpy(), df['PM10'].to_numpy(), marker='o', linewidth=2, color="#39064B")
         ax.tick_params(axis='y', labelsize=20)
         ax.tick_params(axis='x', labelsize=20, labelrotation=45)
         ax.set_ylabel("PM10", fontsize=25)
@@ -95,7 +96,7 @@ def air_polution_graph(df):
 
     with st.expander("SO2"):
         fig, ax = plt.subplots(figsize=(16, 8))
-        ax.plot(df['year'], df['SO2'], marker='o', linewidth=2, color="#39064B")
+        ax.plot(df['year'].to_numpy(), df['SO2'].to_numpy(), marker='o', linewidth=2, color="#39064B")
         ax.tick_params(axis='y', labelsize=20)
         ax.tick_params(axis='x', labelsize=20, labelrotation=45)
         ax.set_ylabel("SO2", fontsize=25)
@@ -104,7 +105,7 @@ def air_polution_graph(df):
 
     with st.expander("NO2"):
         fig, ax = plt.subplots(figsize=(16, 8))
-        ax.plot(df['year'], df['NO2'], marker='o', linewidth=2, color="#39064B")
+        ax.plot(df['year'].to_numpy(), df['NO2'].to_numpy(), marker='o', linewidth=2, color="#39064B")
         ax.tick_params(axis='y', labelsize=20)
         ax.tick_params(axis='x', labelsize=20, labelrotation=45)
         ax.set_ylabel("NO2", fontsize=25)
@@ -113,7 +114,7 @@ def air_polution_graph(df):
 
     with st.expander("CO"):
         fig, ax = plt.subplots(figsize=(16, 8))
-        ax.plot(df['year'], df['CO'], marker='o', linewidth=2, color="#39064B")
+        ax.plot(df['year'].to_numpy(), df['CO'].to_numpy(), marker='o', linewidth=2, color="#39064B")
         ax.tick_params(axis='y', labelsize=20)
         ax.tick_params(axis='x', labelsize=20, labelrotation=45)
         ax.set_ylabel("CO", fontsize=25)
@@ -122,7 +123,7 @@ def air_polution_graph(df):
 
     with st.expander("O3"):
         fig, ax = plt.subplots(figsize=(16, 8))
-        ax.plot(df['year'], df['O3'], marker='o', linewidth=2, color="#39064B")
+        ax.plot(df['year'].to_numpy(), df['O3'].to_numpy(), marker='o', linewidth=2, color="#39064B")
         ax.tick_params(axis='y', labelsize=20)
         ax.tick_params(axis='x', labelsize=20, labelrotation=45)
         ax.set_ylabel("O3", fontsize=25)
