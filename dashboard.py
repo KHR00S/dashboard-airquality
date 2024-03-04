@@ -72,8 +72,9 @@ def airpolution_display(df):
             st.metric("O3:", value=O3)
 
 # Define air_polution_graph function
-# Define air_polution_graph function
 def air_polution_graph(df):
+    df = df.sort_values(by='year')  # Ensure DataFrame is sorted by 'year'
+    
     with st.expander("PM2.5"):
         fig, ax = plt.subplots(figsize=(16, 8))
         ax.plot(df['year'], df['PM2.5'], marker='o', linewidth=2, color="#39064B")
@@ -128,6 +129,9 @@ def air_polution_graph(df):
         ax.set_title("O3", loc="center", fontsize=35)
         st.pyplot(fig)
 
+
+# Additional debugging information
+    st.write(df.head())  # Output DataFrame to Streamlit app for debugging
 # Sidebar with author information
 st.sidebar.header("Author Information")
 st.sidebar.text("Name: FAKHRUS SYAKIR")
