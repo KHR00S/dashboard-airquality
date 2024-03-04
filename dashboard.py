@@ -130,9 +130,6 @@ def air_polution_graph(df):
         ax.set_title("O3", loc="center", fontsize=35)
         st.pyplot(fig)
 
-
-# Additional debugging information
-    st.write(df.head())  # Output DataFrame to Streamlit app for debugging
 # Sidebar with author information
 st.sidebar.header("Author Information")
 st.sidebar.text("Name: FAKHRUS SYAKIR")
@@ -147,6 +144,7 @@ polusi_pertahun = air_polution_df(all_df)
 with st.container():
         st.header("1. Bagaimana trend polusi udara di Wanshouxigong")
         air_polution_graph(polusi_pertahun)
+st.text("Dari Trend Polusi selama 5 tahun terakhir dapat ditarik kesimpulan bahwa \npada setiap indikator (PM2.5, PM10, SO2, NO2,dan Co) mengalami fluktuasi")
 
 # Display correlation heatmap
 st.header("2. Bagaimana korelasi polusi udara terhadap variabel lainnya")
@@ -158,6 +156,7 @@ sns.heatmap(correlation_matrix, vmax=1, vmin=-1, center=0, cmap="plasma")
 ax.tick_params(labelsize=10)
 ax.set_title("Korelasi heatmap", loc="center", fontsize=35)
 st.pyplot(fig)
+st.text("Dari korelasi Heatmap didapatkan bahwa polusi udara berkorelasi rendah \nterhadap variabel lainnya(O3, TEMP, PRES, DEWP, RAIN,dan WSPM)")
 
 # Regression plot between DEWP and TEMP
 st.header("3. Bagaimana korelasi antara temperatur dan Dew Point (DEWP) di Wanshouxigong")
@@ -167,6 +166,8 @@ plt.title('Regplot antara DEWP dan TEMP')
 plt.xlabel('DEWP')
 plt.ylabel('TEMP')
 st.pyplot(fig)
+
+st.text("Dari Regplot yang dihasilkan didapatkan korelasi antara suhu udara (temperature) dan \ntitik embun (dew point) erat kaitannya, karena titik embun adalah suhu di mana udara \nmenjadi jenuh dan uap air mulai mengembun menjadi tetesan air.")
 
 # Bar plot for Air Pollution Level (PM2.5)
 st.header("4. Apakah pernah terjadi keadaan berbahaya ketika PM2.5 menjadi berbahaya di Wanshouxigong")
@@ -188,3 +189,8 @@ ax.set_ylabel('Frequency')
 ax.set_title('Proportion of Air Pollution Levels From PM10')
 ax.tick_params(axis='x', rotation=45)
 st.pyplot(fig)
+
+st.text("Dari proporsi polusi udara yang ditampilkan dapat disimpulkan bahwa di Wanshouxigong \nterdapat lebih dari 2000 kali keadaan polusi udara menjadi berbahaya, melebihi dari \nkeadaan tidak berbahaya")
+
+
+st.caption("Made By @Fakhrus Syakir")
