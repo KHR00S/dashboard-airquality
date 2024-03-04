@@ -1,1 +1,1 @@
-https://dashboard-air-quality-khr00s.streamlit.app/
+https://khroos.streamlit.app
