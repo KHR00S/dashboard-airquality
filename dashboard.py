@@ -72,6 +72,7 @@ def airpolution_display(df):
             st.metric("O3:", value=O3)
 
 # Define air_polution_graph function
+# Define air_polution_graph function
 def air_polution_graph(df):
     with st.expander("PM2.5"):
         fig, ax = plt.subplots(figsize=(16, 8))
@@ -136,12 +137,11 @@ st.sidebar.text("GitHub: KHR00S")
 # Title and data display
 st.title("Air Quality in Wanshouxigong")
 
-# Display air pollution graphs
+#Display air pollution graphs
 polusi_pertahun = air_polution_df(all_df)
-
 with st.container():
-    st.header("1. Bagaimana trend polusi udara di Wanshouxigong")
-    air_polution_graph(polusi_pertahun)
+        st.header("1. Bagaimana trend polusi udara di Wanshouxigong")
+        air_polution_graph(polusi_pertahun)
 
 # Display correlation heatmap
 st.header("2. Bagaimana korelasi polusi udara terhadap variabel lainnya")
