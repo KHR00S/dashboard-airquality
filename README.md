@@ -46,6 +46,17 @@
 
 The `dashboard.py` script in the `Dashboard` folder contains the application to interactively explore the analyzed data. Run the script and navigate to the provided URL to access the dashboard.
 
+## Setup environment
+```
+pip install numpy pandas scipy matplotlib seaborn jupyter streamlit
+```
+
+## Run steamlit app
+```
+streamlit run dashboard.py
+```
+
+
 or you can open this link: https://khroos.streamlit.app
 
 Feel free to reach out if you have any questions or suggestions!
