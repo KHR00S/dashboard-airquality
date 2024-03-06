@@ -23,9 +23,6 @@
 - **Data:**
   - **all_data.csv:** Cleaned and processed dataset used for analysis.
 
-- **Images:**
-  - *(Any images generated during the analysis, like visualizations or graphs)*
-
 - **README.md:**
   - Detailed documentation of the project, explaining the purpose, data analysis steps, and findings.
 
@@ -41,7 +38,7 @@
 ## How to Use
 
 1. Clone the repository to your local machine.
-2. Open and run the Jupyter Notebooks in the `Notebooks` folder to understand the data analysis process.
+2. Open and run the Jupyter Notebooks in the `kualitas udara gong.ipynb` to understand the data analysis process.
 3. Execute the `dashboard.py` script in the `Dashboard` folder to launch the dashboard application.
 4. Explore the visualizations and findings in the dashboard.
 
