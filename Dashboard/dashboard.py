@@ -224,7 +224,7 @@ selected_countries = ['China', 'India', 'United States', 'Brazil']
 filtered_world = world[world['name'].isin(selected_countries)]
 
 # Streamlit app
-st.title("GeoDataFrame Visualization in Streamlit")
+st.title("5. Bagaimana GeoDataFrame Visualization di Streamlit")
 
 # Display the filtered world map
 st.write("Country Map:")
