@@ -34,6 +34,7 @@
 - NumPy
 - Matplotlib
 - Seaborn
+- Geopandas
 
 ## How to Use
 
