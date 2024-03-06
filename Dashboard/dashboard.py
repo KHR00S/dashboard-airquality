@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+import geopandas as gpd
 
 # Set seaborn style
 sns.set_style("whitegrid")
@@ -192,5 +193,52 @@ st.pyplot(fig)
 
 st.write("Dari proporsi polusi udara yang ditampilkan dapat disimpulkan bahwa di Wanshouxigong terdapat lebih dari 2000 kali keadaan polusi udara menjadi berbahaya, melebihi dari keadaan tidak berbahaya")
 
+# Create a synthetic DataFrame with latitude and longitude columns
+synthetic_data = {
+    'time': ['2018', '2019', '2020'],
+    'latitude': [30.0, 31.0, 32.0],
+    'longitude': [120.0, 121.0, 122.0],
+    'PM2.5': [25, 30, 20],
+    'PM10': [40, 35, 45],
+}
+
+# Create a synthetic DataFrame with latitude and longitude columns
+synthetic_data = {
+    'time': ['2018', '2019', '2020'],
+    'latitude': [30.0, 31.0, 32.0],
+    'longitude': [120.0, 121.0, 122.0],
+    'PM2.5': [25, 30, 20],
+    'PM10': [40, 35, 45],
+}
+
+# Create a GeoDataFrame
+gdf = gpd.GeoDataFrame(synthetic_data, geometry=gpd.points_from_xy(synthetic_data['longitude'], synthetic_data['latitude']))
+
+# World map for background
+world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
+
+# Select specific countries
+selected_countries = ['China', 'India', 'United States', 'Brazil']
+
+# Filter the world GeoDataFrame
+filtered_world = world[world['name'].isin(selected_countries)]
+
+# Streamlit app
+st.title("GeoDataFrame Visualization in Streamlit")
+
+# Display the filtered world map
+st.write("Country Map:")
+fig, ax = plt.subplots(figsize=(15, 10))
+filtered_world.plot(ax=ax, color='lightgrey', edgecolor='black')
+st.pyplot(fig)
+
+# Display the GeoDataFrame plot
+st.write("GeoDataFrame Plot:")
+fig, ax = plt.subplots(figsize=(15, 10))
+filtered_world.plot(ax=ax, color='lightgrey', edgecolor='black')
+gdf.plot(ax=ax, color='red', markersize=100)
+st.pyplot(fig)
+
+st.write("Pada plot GeoDataFrame di contoh sebelumnya, tanda merah menunjukkan lokasi yang diwakili oleh data dalam DataFrame Anda. Dalam contoh synthetic data yang diberikan, tanda merah mewakili titik-titik dengan koordinat latitude dan longitude yang telah ditentukan. Lokasi ini kemudian digambarkan pada peta negara yang diambil dari GeoDataFrame dunia.")
 
 st.caption("Made By @Fakhrus Syakir")
