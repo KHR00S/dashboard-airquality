@@ -211,14 +211,32 @@ synthetic_data = {
     'PM10': [40, 35, 45],
 }
 
+# Create a synthetic DataFrame with latitude and longitude columns
+synthetic_data = {
+    'time': ['2018', '2019', '2020'],
+    'latitude': [30.0, 31.0, 32.0],
+    'longitude': [120.0, 121.0, 122.0],
+    'PM2.5': [25, 30, 20],
+    'PM10': [40, 35, 45],
+}
+
+# Create a synthetic DataFrame with latitude and longitude columns
+synthetic_data = {
+    'time': ['2018', '2019', '2020'],
+    'latitude': [30.0, 31.0, 32.0],
+    'longitude': [120.0, 121.0, 122.0],
+    'PM2.5': [25, 30, 20],
+    'PM10': [40, 35, 45],
+}
+
 # Create a GeoDataFrame
 gdf = gpd.GeoDataFrame(synthetic_data, geometry=gpd.points_from_xy(synthetic_data['longitude'], synthetic_data['latitude']))
 
 # World map for background
 world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
 
-# Select specific countries
-selected_countries = ['China', 'India', 'United States', 'Brazil']
+# Select specific countries (Change this to 'China')
+selected_countries = ['China']
 
 # Filter the world GeoDataFrame
 filtered_world = world[world['name'].isin(selected_countries)]
@@ -226,14 +244,14 @@ filtered_world = world[world['name'].isin(selected_countries)]
 # Streamlit app
 st.title("5. Bagaimana GeoDataFrame Visualization di Streamlit")
 
-# Display the filtered world map
-st.write("Country Map:")
+# Display the filtered world map for China
+st.write("Country Map - China:")
 fig, ax = plt.subplots(figsize=(15, 10))
 filtered_world.plot(ax=ax, color='lightgrey', edgecolor='black')
 st.pyplot(fig)
 
-# Display the GeoDataFrame plot
-st.write("GeoDataFrame Plot:")
+# Display the GeoDataFrame plot for China
+st.write("GeoDataFrame Plot - China:")
 fig, ax = plt.subplots(figsize=(15, 10))
 filtered_world.plot(ax=ax, color='lightgrey', edgecolor='black')
 gdf.plot(ax=ax, color='red', markersize=100)
